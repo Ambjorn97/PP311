@@ -51,7 +51,7 @@ public class UserDaoImpl implements UserDao {
         if (user == null) {
             throw new EntityNotFoundException();
         }
-        Query query = session.createQuery("delete from User where id = :id");
+        Query<User> query = session.createQuery("delete from User where id = :id");
         query.setParameter("id", id);
         query.executeUpdate();
     }
